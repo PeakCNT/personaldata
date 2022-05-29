@@ -1,0 +1,16 @@
+*{
+  margin:0;
+}
+
+.header{
+  font-size: 2rem;
+  margin-bottom: 5px;
+}
+
+.formbox{
+  display: grid;
+  grid-template-columns: repeat(3,1fr);
+  grid-template-rows: repeat(3,1fr);
+  grid-gap: 20px;
+}
+
