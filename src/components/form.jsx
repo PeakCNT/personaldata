@@ -23,7 +23,8 @@ const Form = () => {
     email: Yup.string().email("Email is invalid"),
     gender: Yup.string(),
     phone: Yup.string().required("Mobilephone is required"),
-    salary: Yup.string().required("Expected Salary is required"),
+    salary: Yup.number().required("Expected Salary is required"),
+    passport: Yup.string(),
   });
   const formOptions = { resolver: yupResolver(validationSchema) };
   const dispatch = useDispatch();
@@ -142,9 +143,9 @@ const Form = () => {
               type="radio"
               defaultValue={user.gender}
               {...register("gender")}
-              value="Other"
+              value="Unisex"
             />
-            <label>Other</label>
+            <label>Unisex</label>
           </div>
           <div>
             <label>Mobilephone : </label>
@@ -169,6 +170,15 @@ const Form = () => {
               {...register("salary")}
             />
             <div className="invalid-feedback">{errors.salary?.message}</div>
+          </div>
+          <div>
+            <label>Passport NO. : </label>
+            <input
+              name="passport"
+              type="text"
+              defaultValue={user.salary}
+              {...register("passport")}
+            />
           </div>
 
           <button type="submit" className="">
